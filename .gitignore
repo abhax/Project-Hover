@@ -1,0 +1,7 @@
+build/tmp
+build/cache
+build/*.lock
+build/*.sock
+build/*.log
+build/downloads
+build/sstate-cache
