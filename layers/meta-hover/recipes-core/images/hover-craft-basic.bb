@@ -3,8 +3,9 @@ include recipes-graphics/images/core-image-weston.bb
 
 # Include modules in rootfs
 IMAGE_INSTALL:append  = " \
-            trace-cmd perf\
-            v4l-utils libcamera\
+            trace-cmd perf \
+            v4l-utils libcamera \
+            gdbserver \
             "
 
 PACKAGE_EXCLUDE_COMPLIMENTARY = "openssh"
