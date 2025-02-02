@@ -5,7 +5,7 @@ include recipes-graphics/images/core-image-weston.bb
 IMAGE_INSTALL:append  = " \
             trace-cmd perf \
             v4l-utils libcamera \
-            gdbserver \
+            gdbserver kmscube freeglut \
             "
 
 PACKAGE_EXCLUDE_COMPLIMENTARY = "openssh"
