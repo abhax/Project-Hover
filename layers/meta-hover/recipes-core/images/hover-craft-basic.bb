@@ -1,11 +1,11 @@
 # Base this image on core-image-minimal
-include recipes-graphics/images/core-image-weston.bb
+include recipes-core/images/core-image-minimal.bb
 
 # Include modules in rootfs
 IMAGE_INSTALL:append  = " \
             trace-cmd perf \
-            v4l-utils libcamera \
-            gdbserver kmscube freeglut \
+            v4l-utils \
+            gdbserver freeglut \
             "
 
 PACKAGE_EXCLUDE_COMPLIMENTARY = "openssh"
