@@ -10,6 +10,14 @@ fi
 # The '.' command is the same as 'source' but more portable
 . ./layers/meta-poky-honister/oe-init-build-env build
 
+# Add custom message with additional targets
+cat << EOF
+
+Additional Hover Project targets:
+    hover-craft-basic
+
+EOF
+
 # Keep the shell open by not exiting
 echo "Yocto build environment initialized in $(pwd)"
 echo "Current user: $(whoami)"
