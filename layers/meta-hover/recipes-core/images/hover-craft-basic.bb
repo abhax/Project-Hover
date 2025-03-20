@@ -1,11 +1,26 @@
 # Base this image on core-image-minimal
 include recipes-core/images/core-image-minimal.bb
 
+# Ensure Bluetooth is in DISTRO_FEATURES
+DISTRO_FEATURES:append = " bluetooth"
+
+# Explicitly use SysVinit instead of systemd
+DISTRO_FEATURES:remove = "systemd"
+DISTRO_FEATURES:append = " sysvinit"
+VIRTUAL-RUNTIME_init_manager = "sysvinit"
+VIRTUAL-RUNTIME_initscripts = "initscripts"
+
 # Include modules in rootfs
 IMAGE_INSTALL:append  = " \
             trace-cmd perf \
             v4l-utils \
             gdbserver freeglut \
+            bluez5 \
+            bluez5-noinst-tools \
+            bluez5-obex \
+            bluez5-testtools \
+            linux-firmware-bcm43430 \
+            kernel-modules \
             "
 
 PACKAGE_EXCLUDE_COMPLIMENTARY = "openssh"
