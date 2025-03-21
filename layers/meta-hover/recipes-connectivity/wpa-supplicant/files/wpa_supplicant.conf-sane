@@ -1,0 +1,28 @@
+ctrl_interface=/var/run/wpa_supplicant
+ctrl_interface_group=0
+update_config=1
+
+# Default configuration - replace with your own network details
+# Add your network like this:
+#
+# network={
+#     ssid="YourNetworkName"
+#     psk="YourNetworkPassword"
+#     key_mgmt=WPA-PSK
+# }
+#
+# For hidden networks, add:
+# scan_ssid=1
+
+country=US
+
+# To connect to Enterprise WPA networks:
+#
+# network={
+#    ssid="EnterpriseNetwork"
+#    key_mgmt=WPA-EAP
+#    eap=PEAP
+#    identity="your_username"
+#    password="your_password"
+#    phase2="auth=MSCHAPV2"
+# } 

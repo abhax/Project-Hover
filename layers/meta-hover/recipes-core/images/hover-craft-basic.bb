@@ -12,6 +12,7 @@ VIRTUAL-RUNTIME_initscripts = "initscripts"
 
 # Include modules in rootfs
 IMAGE_INSTALL:append  = " \
+            hover-app \
             trace-cmd perf \
             v4l-utils \
             gdbserver freeglut \

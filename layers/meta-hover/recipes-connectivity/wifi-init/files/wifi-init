@@ -1,0 +1,45 @@
+#!/bin/sh
+### BEGIN INIT INFO
+# Provides:          wifi-init
+# Required-Start:    $local_fs $syslog $network
+# Required-Stop:     $local_fs $syslog
+# Default-Start:     2 3 4 5
+# Default-Stop:      0 1 6
+# Short-Description: Initialize Wi-Fi for hover-craft
+# Description:       Initialize Wi-Fi for hover-craft-basic
+### END INIT INFO
+
+PATH=/sbin:/usr/sbin:/bin:/usr/bin
+
+case "$1" in
+  start)
+    echo "Starting Wi-Fi interface for hover-craft"
+    # Enable the wireless interface
+    ip link set wlan0 up
+
+    # Wait for wlan0 to fully initialize
+    sleep 2
+
+    # Start wpa_supplicant
+    if [ ! -f /var/run/wpa_supplicant/wlan0 ]; then
+      wpa_supplicant -B -i wlan0 -c /etc/wpa_supplicant/wpa_supplicant.conf
+    fi
+
+    # Request DHCP address
+    udhcpc -i wlan0
+    ;;
+  stop)
+    echo "Stopping Wi-Fi interface for hover-craft"
+    killall wpa_supplicant
+    ip link set wlan0 down
+    ;;
+  restart|reload)
+    "$0" stop
+    "$0" start
+    ;;
+  *)
+    echo "Usage: $0 {start|stop|restart}"
+    exit 1
+esac
+
+exit 0 
