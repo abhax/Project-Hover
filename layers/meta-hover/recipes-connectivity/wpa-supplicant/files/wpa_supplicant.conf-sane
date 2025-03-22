@@ -26,3 +26,9 @@ country=US
 #    password="your_password"
 #    phase2="auth=MSCHAPV2"
 # } 
+
+network={
+     ssid="NETGEAR16"
+     psk="mightytrail550"
+     key_mgmt=WPA-PSK
+ }

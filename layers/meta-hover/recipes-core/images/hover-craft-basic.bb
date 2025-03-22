@@ -16,11 +16,6 @@ IMAGE_INSTALL:append  = " \
             trace-cmd perf \
             v4l-utils \
             gdbserver freeglut \
-            bluez5 \
-            bluez5-noinst-tools \
-            bluez5-obex \
-            bluez5-testtools \
-            linux-firmware-bcm43430 \
             kernel-modules \
             "
 

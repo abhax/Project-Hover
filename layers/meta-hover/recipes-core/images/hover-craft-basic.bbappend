@@ -6,8 +6,8 @@ IMAGE_INSTALL:append = " \
     bluez5-testtools \
     packagegroup-core-buildessential \
     wpa-supplicant \
-    iw \
-    linux-firmware-rpidistro-bcm43430 \
+    iw dropbear \
+    linux-firmware-rpidistro-bcm43455 \
     wifi-init \
 "
 
